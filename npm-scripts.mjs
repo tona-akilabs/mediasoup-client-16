@@ -2,7 +2,7 @@ import * as process from 'node:process';
 import * as path from 'node:path';
 import * as fs from 'node:fs';
 import { execSync } from 'node:child_process';
-import pkg from './package.json' with { type: 'json' };
+const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
 const MAYOR_VERSION = pkg.version.split('.')[0];
 
