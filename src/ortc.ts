@@ -1080,6 +1080,13 @@ function isRtxCodec(codec?: RtpCodecCapability | RtpCodecParameters): boolean {
 	return /.+\/rtx$/i.test(codec.mimeType);
 }
 
+function safeGenerateProfileLevelIdForAnswer(
+	local: Record<string, unknown> | undefined,
+	remote: Record<string, unknown> | undefined
+) {
+	return h264.generateProfileLevelIdForAnswer(local ?? {}, remote ?? {});
+}
+
 function matchCodecs(
 	aCodec: RtpCodecCapability | RtpCodecParameters,
 	bCodec: RtpCodecCapability | RtpCodecParameters,
@@ -1112,15 +1119,15 @@ function matchCodecs(
 				if (aPacketizationMode !== bPacketizationMode) {
 					return false;
 				}
-
-				if (!h264.isSameProfile(aCodec.parameters, bCodec.parameters)) {
+				const asObject = (v: Record<string, unknown> | undefined): object => v ?? {};
+				if (!h264.isSameProfile(asObject(aCodec.parameters), asObject(bCodec.parameters))) {
 					return false;
 				}
 
 				let selectedProfileLevelId;
 
 				try {
-					selectedProfileLevelId = h264.generateProfileLevelIdStringForAnswer(
+					selectedProfileLevelId = safeGenerateProfileLevelIdForAnswer(
 						aCodec.parameters,
 						bCodec.parameters
 					);
