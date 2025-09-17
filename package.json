@@ -1,16 +1,12 @@
 {
-	"name": "mediasoup-client",
-	"version": "3.16.0",
+	"name": "medias-client",
+	"version": "1.0.0",
 	"description": "mediasoup client side TypeScript library",
-	"contributors": [
-		"Iñaki Baz Castillo <ibc@aliax.net> (https://inakibaz.me)",
-		"José Luis Millán <jmillan@aliax.net> (https://github.com/jmillan)"
-	],
 	"license": "ISC",
 	"homepage": "https://mediasoup.org",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/versatica/mediasoup-client.git"
+		"url": "git+https://github.com/tona-akilabs/mediasoup-client-16.git"
 	},
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
