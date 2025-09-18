@@ -1,7 +1,7 @@
 {
 	"compileOnSave": true,
 	"compilerOptions": {
-		"lib": ["es2024", "dom"],
+		"target": "ES2020",
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext",
 		"outDir": "lib",
@@ -9,32 +9,22 @@
 		"declarationMap": true,
 		"emitDeclarationOnly": false,
 		"declarationDir": "lib",
-		"isolatedModules": true,
-		"verbatimModuleSyntax": false,
-		"useDefineForClassFields": true,
-		"esModuleInterop": false,
-		"allowImportingTsExtensions": false,
-		"allowUnreachableCode": false,
-		"allowUnusedLabels": false,
-		"alwaysStrict": true,
-		"exactOptionalPropertyTypes": false,
-		"noFallthroughCasesInSwitch": true,
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"removeComments": true,
+		"forceConsistentCasingInFileNames": true,
+
+		// strictness
+		"strict": true,
 		"noImplicitAny": true,
-		"noImplicitOverride": true,
-		"noImplicitReturns": true,
+		"strictNullChecks": true,
 		"noImplicitThis": true,
-		"noPropertyAccessFromIndexSignature": true,
-		"noUncheckedIndexedAccess": true,
+		"alwaysStrict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": false,
-		"strict": true,
-		"strictBindCallApply": true,
-		"strictBuiltinIteratorReturn": true,
-		"strictFunctionTypes": true,
-		"strictNullChecks": true,
-		"strictPropertyInitialization": true,
-		"useUnknownInCatchVariables": true,
-		"noUncheckedSideEffectImports": true
+		"exactOptionalPropertyTypes": false,
+		"useUnknownInCatchVariables": true
 	},
 	"include": ["src"]
 }
