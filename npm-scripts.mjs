@@ -256,18 +256,18 @@ function executeInteractiveCmd(command) {
 }
 
 function logInfo(...args) {
-	// eslint-disable-next-line no-console
+	// eslint-disable-next-line no-undef
 	console.log(`npm-scripts.mjs \x1b[36m[INFO] [${task}]\x1b[0m`, ...args);
 }
 
 // eslint-disable-next-line no-unused-vars
 function logWarn(...args) {
-	// eslint-disable-next-line no-console
+	// eslint-disable-next-line no-undef
 	console.warn(`npm-scripts.mjs \x1b[33m[WARN] [${task}]\x1b\0m`, ...args);
 }
 
 function logError(...args) {
-	// eslint-disable-next-line no-console
+	// eslint-disable-next-line no-undef
 	console.error(`npm-scripts.mjs \x1b[31m[ERROR] [${task}]\x1b[0m`, ...args);
 }
 

@@ -15,6 +15,9 @@ export const version = '__MEDIASOUP_CLIENT_VERSION__';
  */
 export { Device, detectDevice, detectDeviceAsync } from './Device';
 
+// make these types available from 'medias-client'
+export type { DtlsParameters, IceCandidate, IceParameters } from './Transport';
+
 /**
  * Expose parseScalabilityMode() function.
  */
