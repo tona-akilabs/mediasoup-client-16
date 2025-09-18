@@ -18,7 +18,7 @@ export default [
 		languageOptions: {
 			parser: tsParser,
 			parserOptions: {
-				project: './tsconfig.json',
+				// project: './tsconfig.json',
 				// eslint-disable-next-line no-undef
 				tsconfigRootDir: process.cwd(),
 			},
@@ -31,7 +31,6 @@ export default [
 			...tsPlugin.configs.recommended.rules,
 			'no-empty': 'off',
 			'no-undef': 'off',
-			'no-console': 'off',
 			'no-prototype-builtins': 'off',
 		},
 	},

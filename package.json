@@ -1,6 +1,6 @@
 {
 	"name": "medias-client",
-	"version": "1.0.4-alpha.10",
+	"version": "1.0.4-alpha.12",
 	"description": "mediasoup client side TypeScript library",
 	"license": "ISC",
 	"homepage": "https://mediasoup.org",
