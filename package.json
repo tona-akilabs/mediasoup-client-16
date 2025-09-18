@@ -1,6 +1,6 @@
 {
 	"name": "medias-client",
-	"version": "1.0.3",
+	"version": "1.0.4-alpha.10",
 	"description": "mediasoup client side TypeScript library",
 	"license": "ISC",
 	"homepage": "https://mediasoup.org",
@@ -15,21 +15,21 @@
 			"types": "./lib/index.d.ts",
 			"default": "./lib/index.js"
 		},
-		"./types": {
-			"types": "./lib/types.d.ts",
-			"default": "./lib/types.js"
+		"./Transport": {
+			"types": "./lib/Transport.d.ts",
+			"default": "./lib/Transport.js"
 		},
 		"./ortc": {
-			"ortc": "./lib/ortc.d.ts",
+			"types": "./lib/ortc.d.ts",
 			"default": "./lib/ortc.js"
 		},
 		"./enhancedEvents": {
-			"ortc": "./lib/enhancedEvents.d.ts",
+			"types": "./lib/enhancedEvents.d.ts",
 			"default": "./lib/enhancedEvents.js"
 		},
-		"./handlers/*": {
-			"types": "./lib/handlers/*.d.ts",
-			"default": "./lib/handlers/*.js"
+		"./handlers/FakeHandler": {
+			"types": "./lib/handlers/FakeHandler.d.ts",
+			"default": "./lib/handlers/FakeHandler.js"
 		},
 		"./fakeParameters": {
 			"types": "./lib/test/fakeParameters.d.ts",
@@ -43,7 +43,7 @@
 		"lib"
 	],
 	"engines": {
-		"node": ">=16 <18",
+		"node": ">=16",
 		"npm": ">=7"
 	},
 	"keywords": [
@@ -64,7 +64,6 @@
 		"release": "node npm-scripts.mjs release"
 	},
 	"dependencies": {
-		"@types/debug": "^4.1.12",
 		"@types/events-alias": "npm:@types/events@^3.0.3",
 		"awaitqueue": "^2.3.3",
 		"debug": "^4.4.3",
@@ -75,14 +74,15 @@
 		"supports-color": "9.4.0"
 	},
 	"devDependencies": {
-		"@eslint/js": "^8.57.0",
+		"@eslint/js": "^8.57.1",
+		"@types/debug": "^4.1.12",
 		"@types/jest": "^29.5.12",
 		"@types/node": "^16.14.31",
 		"@types/sdp-transform": "^2.15.0",
 		"@types/ua-parser-js": "^0.7.39",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
 		"@typescript-eslint/parser": "^6.21.0",
-		"eslint": "^8.57.0",
+		"eslint": "^8.57.1",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-jest": "^27.9.0",
 		"eslint-plugin-prettier": "^5.5.4",
@@ -91,6 +91,6 @@
 		"open-cli": "^7.2.0",
 		"prettier": "^3.6.2",
 		"ts-jest": "^29.1.1",
-		"typescript": "^5.6.3"
+		"typescript": "^5.9.2"
 	}
 }

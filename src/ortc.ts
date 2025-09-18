@@ -1119,8 +1119,14 @@ function matchCodecs(
 				if (aPacketizationMode !== bPacketizationMode) {
 					return false;
 				}
-				const asObject = (v: Record<string, unknown> | undefined): object => v ?? {};
-				if (!h264.isSameProfile(asObject(aCodec.parameters), asObject(bCodec.parameters))) {
+				const asObject = (v: Record<string, unknown> | undefined): object =>
+					v ?? {};
+				if (
+					!h264.isSameProfile(
+						asObject(aCodec.parameters),
+						asObject(bCodec.parameters)
+					)
+				) {
 					return false;
 				}
 
