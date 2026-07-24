@@ -224,7 +224,7 @@ function release() {
 	logInfo('release()');
 
 	checkRelease();
-	executeCmd(`git commit -am '${pkg.version}'`);
+	// executeCmd(`git commit -am '${pkg.version}'`);
 	executeCmd(`git tag -a ${pkg.version} -m '${pkg.version}'`);
 	executeCmd(`git push origin v${MAYOR_VERSION}`);
 	executeCmd(`git push origin '${pkg.version}'`);
