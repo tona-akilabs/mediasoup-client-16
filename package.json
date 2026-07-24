@@ -1,6 +1,9 @@
 {
 	"name": "@tona-akilabs/medias-client",
 	"version": "1.0.9",
+	"publishConfig": {
+		"access": "public"
+	},
 	"description": "mediasoup client side TypeScript library",
 	"license": "ISC",
 	"homepage": "https://mediasoup.org",
