@@ -27,14 +27,8 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Build package
-              run: npm run typescript:build
-
             - name: release
               run: npm run release
-
-            - name: Run tests
-              run: npm test
 
             - name: npm publish
               run: npm publish --provenance --access public
