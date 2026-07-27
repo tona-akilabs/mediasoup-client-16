@@ -228,7 +228,7 @@ function release() {
 	executeCmd(`git tag -a ${pkg.version} -m '${pkg.version}'`);
 	executeCmd(`git push origin v${MAYOR_VERSION}`);
 	executeCmd(`git push origin '${pkg.version}'`);
-	executeInteractiveCmd('npm publish');
+	// executeInteractiveCmd('npm publish');
 }
 
 function executeCmd(command) {
