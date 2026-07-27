@@ -233,7 +233,7 @@ function release() {
 	const tag = `v${version}`;
 	executeCmd(`git commit -am '${version}'`);
 	executeCmd(`git tag -a '${tag}' -m '${tag}'`);
-	executeCmd(`git push origin HEAD:production`);
+	executeCmd(`git push origin HEAD:production-1`);
 	executeCmd(`git push origin '${tag}'`);
 }
 
