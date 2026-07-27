@@ -4,7 +4,7 @@ import * as fs from 'node:fs';
 import { execSync } from 'node:child_process';
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
-const MAYOR_VERSION = pkg.version.split('.')[0];
+// const MAYOR_VERSION = pkg.version.split('.')[0];
 
 // Paths for ESLint to check. Converted to string for convenience.
 const ESLINT_PATHS = [
@@ -224,11 +224,17 @@ function release() {
 	logInfo('release()');
 
 	checkRelease();
-	executeCmd(`git commit -am '${pkg.version}'`);
+	/*executeCmd(`git commit -am '${pkg.version}'`);
 	executeCmd(`git tag -a ${pkg.version} -m '${pkg.version}'`);
 	executeCmd(`git push origin v${MAYOR_VERSION}`);
 	executeCmd(`git push origin '${pkg.version}'`);
-	executeInteractiveCmd('npm publish');
+	executeInteractiveCmd('npm publish');*/
+	const version = pkg.version;
+	const tag = `v${version}`;
+	executeCmd(`git commit -am '${version}'`);
+	executeCmd(`git tag -a '${tag}' -m '${tag}'`);
+	executeCmd(`git push origin HEAD:production`);
+	executeCmd(`git push origin '${tag}'`);
 }
 
 function executeCmd(command) {
@@ -243,7 +249,7 @@ function executeCmd(command) {
 	}
 }
 
-function executeInteractiveCmd(command) {
+/*function executeInteractiveCmd(command) {
 	logInfo(`executeInteractiveCmd(): ${command}`);
 
 	try {
@@ -253,7 +259,7 @@ function executeInteractiveCmd(command) {
 
 		exitWithError();
 	}
-}
+}*/
 
 function logInfo(...args) {
 	// eslint-disable-next-line no-undef
