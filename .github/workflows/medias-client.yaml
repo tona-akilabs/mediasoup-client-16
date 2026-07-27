@@ -37,15 +37,12 @@ jobs:
                 NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
               run: |
                     echo "Length: ${#NODE_AUTH_TOKEN}"
+
             - name: Show npm config
               run: |
-                  cat ~/.npmrc
-            - name: Configure npm
-              run: |
-                  echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-                  echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
-              env:
-                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  echo "npm config file: $NPM_CONFIG_USERCONFIG"
+                  cat "$NPM_CONFIG_USERCONFIG"
+
             - name: Verify
               run: npm whoami
 
@@ -53,6 +50,6 @@ jobs:
               run: npm run release
 
             - name: npm publish
-              run: npm publish --access public
               env:
                 NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              run: npm publish --access public
