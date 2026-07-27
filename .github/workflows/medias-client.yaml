@@ -12,6 +12,7 @@ permissions:
 
 jobs:
     publish:
+        environment: production
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
