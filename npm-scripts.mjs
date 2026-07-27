@@ -4,7 +4,7 @@ import * as fs from 'node:fs';
 import { execSync } from 'node:child_process';
 const pkg = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
 
-const MAYOR_VERSION = pkg.version.split('.')[0];
+// const MAYOR_VERSION = pkg.version.split('.')[0];
 
 // Paths for ESLint to check. Converted to string for convenience.
 const ESLINT_PATHS = [
