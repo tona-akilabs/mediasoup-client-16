@@ -32,10 +32,27 @@ jobs:
                   git config --global user.name "github-actions[bot]"
                   git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+            - name: Check secret exists
+              env:
+                NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              run: |
+                    echo "Length: ${#NODE_AUTH_TOKEN}"
+            - name: Show npm config
+              run: |
+                  cat ~/.npmrc
+            - name: Configure npm
+              run: |
+                  echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+                  echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            - name: Verify
+              run: npm whoami
+
             - name: release
               run: npm run release
 
             - name: npm publish
               run: npm publish --access public
-              #env:
-              #  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+              env:
+                NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
