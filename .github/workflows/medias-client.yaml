@@ -44,6 +44,8 @@ jobs:
                   cat "$NPM_CONFIG_USERCONFIG"
 
             - name: Verify
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
               run: npm whoami
 
             - name: release
