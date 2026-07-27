@@ -10,7 +10,7 @@ on:
     branches:
       - production
   workflow_dispatch:
-      
+
 permissions:
     contents: read
     id-token: write
@@ -36,6 +36,9 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: npm ci
+      - run: |
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - run: npm run release
       - run: npm publish
         env:
