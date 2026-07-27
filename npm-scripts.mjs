@@ -224,11 +224,17 @@ function release() {
 	logInfo('release()');
 
 	checkRelease();
-	executeCmd(`git commit -am '${pkg.version}'`);
+	/*executeCmd(`git commit -am '${pkg.version}'`);
 	executeCmd(`git tag -a ${pkg.version} -m '${pkg.version}'`);
 	executeCmd(`git push origin v${MAYOR_VERSION}`);
 	executeCmd(`git push origin '${pkg.version}'`);
-	// executeInteractiveCmd('npm publish');
+	executeInteractiveCmd('npm publish');*/
+	const version = pkg.version;
+	const tag = `v${version}`;
+	executeCmd(`git commit -am '${version}'`);
+	executeCmd(`git tag -a '${tag}' -m '${tag}'`);
+	executeCmd(`git push origin HEAD:production`);
+	executeCmd(`git push origin '${tag}'`);
 }
 
 function executeCmd(command) {
