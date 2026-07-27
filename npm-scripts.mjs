@@ -243,7 +243,7 @@ function executeCmd(command) {
 	}
 }
 
-function executeInteractiveCmd(command) {
+/*function executeInteractiveCmd(command) {
 	logInfo(`executeInteractiveCmd(): ${command}`);
 
 	try {
@@ -253,7 +253,7 @@ function executeInteractiveCmd(command) {
 
 		exitWithError();
 	}
-}
+}*/
 
 function logInfo(...args) {
 	// eslint-disable-next-line no-undef
